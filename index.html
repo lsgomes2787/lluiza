@@ -14,7 +14,7 @@
 
     body {
       font-family: "Segoe UI", sans-serif;
-      background: linear-gradient(135deg, #ffd6e7, #ffeaf4);
+      background: linear-gradient(135deg, #e9d5ff, #f3e8ff);
       min-height: 100vh;
       display: flex;
       justify-content: center;
@@ -28,12 +28,12 @@
       background: white;
       padding: 30px;
       border-radius: 25px;
-      box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
+      box-shadow: 0 10px 30px rgba(128, 0, 255, 0.15);
     }
 
     h1 {
       text-align: center;
-      color: #ff4f93;
+      color: #7c3aed;
       margin-bottom: 25px;
       font-size: 32px;
     }
@@ -47,7 +47,7 @@
     input {
       flex: 1;
       padding: 14px;
-      border: 2px solid #ffc2d9;
+      border: 2px solid #d8b4fe;
       border-radius: 14px;
       font-size: 16px;
       outline: none;
@@ -55,12 +55,12 @@
     }
 
     input:focus {
-      border-color: #ff69b4;
-      box-shadow: 0 0 10px rgba(255, 105, 180, 0.2);
+      border-color: #7c3aed;
+      box-shadow: 0 0 10px rgba(124, 58, 237, 0.25);
     }
 
     .add-btn {
-      background: #ff69b4;
+      background: #7c3aed;
       color: white;
       border: none;
       padding: 14px 18px;
@@ -71,7 +71,7 @@
     }
 
     .add-btn:hover {
-      background: #ff4f93;
+      background: #6d28d9;
       transform: scale(1.05);
     }
 
@@ -80,7 +80,7 @@
     }
 
     li {
-      background: #fff0f6;
+      background: #f5f3ff;
       padding: 14px;
       border-radius: 14px;
       margin-bottom: 12px;
@@ -91,12 +91,12 @@
     }
 
     .task-text {
-      color: #444;
+      color: #333;
       font-size: 16px;
     }
 
     .remove-btn {
-      background: #ff9db8;
+      background: #a78bfa;
       border: none;
       color: white;
       padding: 8px 12px;
@@ -106,7 +106,7 @@
     }
 
     .remove-btn:hover {
-      background: #ff4f93;
+      background: #7c3aed;
     }
 
     @keyframes fadeIn {
@@ -133,18 +133,11 @@
 <body>
 
   <div class="container">
-    <h1> Minhas Tarefas</h1>
+    <h1>💜 Minhas Tarefas</h1>
 
     <div class="input-area">
-      <input
-        type="text"
-        id="taskInput"
-        placeholder="Digite uma tarefa..."
-      />
-
-      <button class="add-btn" onclick="addTask()">
-        +
-      </button>
+      <input type="text" id="taskInput" placeholder="Digite uma tarefa..." />
+      <button class="add-btn" onclick="addTask()">+</button>
     </div>
 
     <ul id="taskList"></ul>
@@ -160,9 +153,7 @@
 
     function updateEmptyMessage() {
       emptyMessage.style.display =
-        taskList.children.length === 0
-          ? "block"
-          : "none";
+        taskList.children.length === 0 ? "block" : "none";
     }
 
     function addTask() {
@@ -181,7 +172,6 @@
       `;
 
       taskList.appendChild(li);
-
       input.value = "";
 
       updateEmptyMessage();
@@ -189,7 +179,6 @@
 
     function removeTask(button) {
       button.parentElement.remove();
-
       updateEmptyMessage();
     }
 
